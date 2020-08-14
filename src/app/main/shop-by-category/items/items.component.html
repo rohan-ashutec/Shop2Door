@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back-outline" routerLink="/category"></ion-icon>
+    </ion-buttons>
+    <ion-title>Friuts and Vegetables</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let card of fruits">
+    <ion-card-header>
+      <ion-card-title>{{ card.title }}</ion-card-title>
+      <ion-card-subtitle>{{ card.disount }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col><img [src]="card.image" /></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>{{ card.gram }}</ion-col>
+          <ion-card-title>{{ card.price }}</ion-card-title>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

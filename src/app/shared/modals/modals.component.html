@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <div *ngIf="id === 1">
+      <ion-icon name="close-outline" slot="start"></ion-icon>
+      <ion-title>Shipping and Delivery</ion-title>
+    </div>
+  </ion-toolbar>
+
+  <ion-toolbar *ngIf="id === 2">
+    <ion-icon name="close-outline" slot="start"></ion-icon>
+    <ion-title>Returns and Refunds</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar *ngIf="id === 3">
+    <ion-icon name="close-outline" slot="start"></ion-icon>
+    <ion-title>Payment, Pricing & Promotions</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar *ngIf="id === 4">
+    <ion-icon name="close-outline" slot="start"></ion-icon>
+    <ion-title>Orders</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar *ngIf="id === 5">
+    <ion-icon name="close-outline" slot="start"></ion-icon>
+    <ion-title>Managing Your Account</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar *ngIf="id === 6">
+    <ion-icon name="close-outline" slot="start"></ion-icon>
+    <ion-title>User Feedback</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar *ngIf="id === 7">
+    <ion-icon name="close-outline" slot="start"></ion-icon>
+    <ion-title>Customer Support</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <div *ngIf="id === 1">
+      <ion-item *ngFor="let card of shipping">
+        <ion-label>{{ card.title }}</ion-label>
+        <p>{{ content }}</p>
+      </ion-item>
+    </div>
+  </ion-card>
+
+  <ion-card *ngIf="id === 2">
+    <ion-item *ngFor="let card of returns">
+      <ion-label>{{ card.title }}</ion-label>
+      <p>{{ content }}</p>
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngIf="id === 3">
+    <ion-item *ngFor="let card of payments">
+      <ion-label>{{ card.title }}</ion-label>
+      <p>{{ content }}</p>
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngIf="id === 4">
+    <ion-item *ngFor="let card of orders">
+      <ion-label>{{ card.title }}</ion-label>
+      <p>{{ content }}</p>
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngIf="id === 5">
+    <ion-item *ngFor="let card of managing">
+      <ion-label>{{ card.title }}</ion-label>
+      <p>{{ content }}</p>
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngIf="id === 6">
+    <ion-item *ngFor="let card of user">
+      <ion-label>{{ card.title }}</ion-label>
+      <p>{{ content }}</p>
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngIf="id === 7">
+    <ion-item *ngFor="let card of customer">
+      <ion-label>{{ card.title }}</ion-label>
+      <p>{{ content }}</p>
+    </ion-item>
+  </ion-card>
+</ion-content>
