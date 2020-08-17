@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavParams } from '@ionic/angular';
+import { NavParams, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-modals',
@@ -9,7 +9,7 @@ import { NavParams } from '@ionic/angular';
 export class ModalsComponent implements OnInit {
   id: Number;
   content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse hendrerit sed lacus non condimentum. Sed sapien augue, ornare non eros eu, bibendum pulvinar purus. Aenean eu blandit elit, quis tincidunt turpis.";
-
+  title: String;
   shipping = [
     {
       title: "How log does shipping take?",
@@ -113,35 +113,49 @@ export class ModalsComponent implements OnInit {
       title: "I cancelled my order. How will I receive my refund?",
     }
   ];
+
   cards: any[];
-  constructor(params: NavParams) {
+  constructor(params: NavParams, private modalCtrl: ModalController) {
     this.id = params.get('id')
+    console.log(this.id)
   }
+  ionViewDidEnter() {
 
-  ngOnInit() {
-    this.content
-    this.customer;
-    this.managing;
-    this.orders;
-    this.payments;
-    this.returns;
-    this.shipping;
-    this.user;
-    if (this.id = 1) {
-      return this.cards = this.shipping;
-    } else if (this.id = 2) {
-      return this.cards = this.returns;
-    } else if (this.id = 3) {
-      return this.cards = this.payments;
-    } else if (this.id = 4) {
-      return this.cards = this.orders;
-    } else if (this.id = 5) {
-      return this.cards = this.managing;
-    } else if (this.id = 6) {
-      return this.cards = this.user;
+    if (this.id == 1) {
+      this.cards = this.shipping
+      this.title = "Shipping and Delivery";
+      
+    } else if (this.id == 2) {
+      this.title = "Returns and Refunds";
+      this.cards = this.returns
+      
+    } else if (this.id == 3) {
+      this.title = "Payment, Pricing & Promotions";
+      this.cards = this.payments
+      
+    } else if (this.id == 4) {
+      this.title = "Orders";
+      this.cards = this.orders
+      
+    } else if (this.id == 5) {
+      this.title = "Managing Your Account";
+      this.cards = this.managing
+      
+    } else if (this.id == 6) {
+      this.title = "User Feedback";
+      this.cards = this.user
+      
     } else {
-      return this.cards = this.customer;
+      this.title = "Customer Support";
+      this.cards = this.customer
+      
     }
-  }
 
+  }
+  close() {
+    this.modalCtrl.dismiss();
+  }
+  ngOnInit() {
+
+  }
 }

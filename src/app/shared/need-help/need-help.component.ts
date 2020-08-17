@@ -35,11 +35,12 @@ export class NeedHelpComponent implements OnInit {
   constructor(public modalCtrl: ModalController) { }
 
   ngOnInit() { this.cards; }
-  async presentProfileModal(id) {
-    const modal = await this.modalCtrl.create({
+  presentProfileModal(id) {
+    this.modalCtrl.create({
       component: ModalsComponent,
       componentProps: { id: id }
-    });
-    return await modal.present();
+    }).then(modalEl => {
+      modalEl.present();
+    })
   }
 }
