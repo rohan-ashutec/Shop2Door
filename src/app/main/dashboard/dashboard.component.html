@@ -1,254 +1,253 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Delivery Location</ion-title>
+    <ion-icon name="cart-outline" slot="end"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="9">
+            <ion-card-title>Top Savers Deal</ion-card-title>
+          </ion-col>
+          <ion-col size="3">
+            <ion-card-subtitle
+              ><ion-buttons shape="round">
+                <ion-button>
+                  See All
+                </ion-button>
+              </ion-buttons></ion-card-subtitle
+            >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-slides>
+        <ion-slide *ngFor="let card of fruits">
+          <ion-card class="image">
+            <ion-card-content>
+              <ion-card-subtitle class="ion-background-green">{{
+                card.disount
+              }}</ion-card-subtitle>
+              <img [src]="card.image" />
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-title>{{ card.price }}</ion-card-title>
+                  </ion-col>
+                  <ion-col>
+                    <ion-card-subtitle>{{ card.cutprice }}</ion-card-subtitle>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    {{ card.gram }}
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-button color="primary">ADD</ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-card-content>
+  </ion-card>
 
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Delivery Location</ion-title>
-      <ion-icon name="cart-outline" slot="end"></ion-icon>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-card>
-      <ion-card-header>
-        <ion-grid>
-          <ion-row>
-            <ion-col size="9">
-              <ion-card-title>Top Savers Deal</ion-card-title>
-            </ion-col>
-            <ion-col size="3">
-              <ion-card-subtitle
-                ><ion-buttons shape="round">
-                  <ion-button>
-                    See All
-                  </ion-button>
-                </ion-buttons></ion-card-subtitle
-              >
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-slides>
-          <ion-slide *ngFor="let card of fruits">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle class="ion-background-green">{{
-                  card.disount
-                }}</ion-card-subtitle>
-                <img [src]="card.image" />
-                <ion-grid>
-                  <ion-row>
-                    <ion-col>
-                      <ion-card-title>{{ card.price }}</ion-card-title>
-                    </ion-col>
-                    <ion-col>
-                      <ion-card-subtitle>{{ card.cutprice }}</ion-card-subtitle>
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col>
-                      {{ card.gram }}
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col>
-                      <ion-button color="primary">ADD</ion-button>
-                    </ion-col>
-                  </ion-row>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-        </ion-slides>
-      </ion-card-content>
-    </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="9">
+            <ion-card-title>Best Offers</ion-card-title>
+          </ion-col>
+          <ion-col size="3">
+            <ion-card-subtitle
+              ><ion-buttons shape="round">
+                <ion-button>
+                  See All
+                </ion-button>
+              </ion-buttons></ion-card-subtitle
+            >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-slides>
+        <ion-slide *ngFor="let card of fruits">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle class="ion-background-green">{{
+                card.disount
+              }}</ion-card-subtitle>
+              <img [src]="card.image" />
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-title>{{ card.price }}</ion-card-title>
+                  </ion-col>
+                  <ion-col>
+                    <ion-card-subtitle>{{ card.cutprice }}</ion-card-subtitle>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    {{ card.gram }}
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-button color="primary">ADD</ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-card-content>
+  </ion-card>
 
-    <ion-card>
-      <ion-card-header>
-        <ion-grid>
-          <ion-row>
-            <ion-col size="9">
-              <ion-card-title>Best Offers</ion-card-title>
-            </ion-col>
-            <ion-col size="3">
-              <ion-card-subtitle
-                ><ion-buttons shape="round">
-                  <ion-button>
-                    See All
-                  </ion-button>
-                </ion-buttons></ion-card-subtitle
-              >
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-slides>
-          <ion-slide *ngFor="let card of fruits">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle class="ion-background-green">{{
-                  card.disount
-                }}</ion-card-subtitle>
-                <img [src]="card.image" />
-                <ion-grid>
-                  <ion-row>
-                    <ion-col>
-                      <ion-card-title>{{ card.price }}</ion-card-title>
-                    </ion-col>
-                    <ion-col>
-                      <ion-card-subtitle>{{ card.cutprice }}</ion-card-subtitle>
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col>
-                      {{ card.gram }}
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col>
-                      <ion-button color="primary">ADD</ion-button>
-                    </ion-col>
-                  </ion-row>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-        </ion-slides>
-      </ion-card-content>
-    </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="9">
+            <ion-card-title>Popular Deals</ion-card-title>
+          </ion-col>
+          <ion-col size="3">
+            <ion-card-subtitle
+              ><ion-buttons shape="round">
+                <ion-button>
+                  See All
+                </ion-button>
+              </ion-buttons></ion-card-subtitle
+            >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-slides>
+        <ion-slide *ngFor="let card of fruits">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle class="ion-background-green">{{
+                card.disount
+              }}</ion-card-subtitle>
+              <img [src]="card.image" />
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-title>{{ card.price }}</ion-card-title>
+                  </ion-col>
+                  <ion-col>
+                    <ion-card-subtitle>{{ card.cutprice }}</ion-card-subtitle>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    {{ card.gram }}
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-button color="primary">ADD</ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-card-content>
+  </ion-card>
 
-    <ion-card>
-      <ion-card-header>
-        <ion-grid>
-          <ion-row>
-            <ion-col size="9">
-              <ion-card-title>Popular Deals</ion-card-title>
-            </ion-col>
-            <ion-col size="3">
-              <ion-card-subtitle
-                ><ion-buttons shape="round">
-                  <ion-button>
-                    See All
-                  </ion-button>
-                </ion-buttons></ion-card-subtitle
-              >
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-slides>
-          <ion-slide *ngFor="let card of fruits">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle class="ion-background-green">{{
-                  card.disount
-                }}</ion-card-subtitle>
-                <img [src]="card.image" />
-                <ion-grid>
-                  <ion-row>
-                    <ion-col>
-                      <ion-card-title>{{ card.price }}</ion-card-title>
-                    </ion-col>
-                    <ion-col>
-                      <ion-card-subtitle>{{ card.cutprice }}</ion-card-subtitle>
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col>
-                      {{ card.gram }}
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col>
-                      <ion-button color="primary">ADD</ion-button>
-                    </ion-col>
-                  </ion-row>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-        </ion-slides>
-      </ion-card-content>
-    </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="9">
+            <ion-card-title>Short Time Offers</ion-card-title>
+          </ion-col>
+          <ion-col size="3">
+            <ion-card-subtitle
+              ><ion-buttons shape="round">
+                <ion-button>
+                  See All
+                </ion-button>
+              </ion-buttons></ion-card-subtitle
+            >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-slides>
+        <ion-slide *ngFor="let card of fruits">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle class="ion-background-green">{{
+                card.disount
+              }}</ion-card-subtitle>
+              <img [src]="card.image" />
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-title>{{ card.price }}</ion-card-title>
+                  </ion-col>
+                  <ion-col>
+                    <ion-card-subtitle>{{ card.cutprice }}</ion-card-subtitle>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    {{ card.gram }}
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-button color="primary">ADD</ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-card-content>
+  </ion-card>
 
-    <ion-card>
-      <ion-card-header>
-        <ion-grid>
-          <ion-row>
-            <ion-col size="9">
-              <ion-card-title>Short Time Offers</ion-card-title>
-            </ion-col>
-            <ion-col size="3">
-              <ion-card-subtitle
-                ><ion-buttons shape="round">
-                  <ion-button>
-                    See All
-                  </ion-button>
-                </ion-buttons></ion-card-subtitle
-              >
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-slides>
-          <ion-slide *ngFor="let card of fruits">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle class="ion-background-green">{{
-                  card.disount
-                }}</ion-card-subtitle>
-                <img [src]="card.image" />
-                <ion-grid>
-                  <ion-row>
-                    <ion-col>
-                      <ion-card-title>{{ card.price }}</ion-card-title>
-                    </ion-col>
-                    <ion-col>
-                      <ion-card-subtitle>{{ card.cutprice }}</ion-card-subtitle>
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col>
-                      {{ card.gram }}
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col>
-                      <ion-button color="primary">ADD</ion-button>
-                    </ion-col>
-                  </ion-row>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-        </ion-slides>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-content>
-        <ion-slides>
-          <ion-slide *ngFor="let card of images">
-            <img [src]="card" />
-          </ion-slide>
-        </ion-slides>
-      </ion-card-content>
-    </ion-card>
-    <ion-card *ngFor="let card of cards" routerLink="/items">
-      <ion-card-header>
-        <ion-card-title>{{card.title}}</ion-card-title>
-        <ion-card-subtitle>{{card.subtitle}}</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-grid>
-          <ion-row>
-            <ion-col><img [src]="card.image" /></ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-slides>
+        <ion-slide *ngFor="let card of images">
+          <img [src]="card" />
+        </ion-slide>
+      </ion-slides>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngFor="let card of cards" routerLink="/items">
+    <ion-card-header>
+      <ion-card-title>{{ card.title }}</ion-card-title>
+      <ion-card-subtitle>{{ card.subtitle }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col><img [src]="card.image" /></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>My Orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img src="./assets/pixel2.jpeg" />
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>You have no past orders</ion-card-subtitle>
+      <ion-card-title>Lets get you started</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row size="9">
+          <ion-col>
+            <ion-button color="danger" routerLink="/dashboard">
+              Start Shopping
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

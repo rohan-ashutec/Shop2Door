@@ -19,6 +19,7 @@ import { RateUsComponent } from './shared/rate-us/rate-us.component';
 import { OfferComponent } from './shared/offer/offer.component';
 import { ShopByCategoryComponent } from './main/shop-by-category/shop-by-category.component';
 import { ItemsComponent } from './main/shop-by-category/items/items.component';
+import { MyordersComponent } from './orders/myorders/myorders.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { ItemsComponent } from './main/shop-by-category/items/items.component';
     RateUsComponent,
     OfferComponent,
     ShopByCategoryComponent,
-    ItemsComponent
+    ItemsComponent,
+    MyordersComponent
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule],

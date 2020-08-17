@@ -1,29 +1,29 @@
-  <ion-header>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Offer</ion-title>
-  </ion-header>
-  <ion-content padding>
-    <ion-content fullscreen>
-      <ion-card *ngFor="let card of cards">
-        <img [src]="card.image" />
-        <ion-card-header>
-          <ion-card-title>{{ card.title }}</ion-card-title>
-          <ion-card-subtitle>{{ card.subtitle }}</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-grid>
-            <ion-row>
-              <ion-col>Code:</ion-col>
-              <ion-col>{{ card.code }}</ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>Min Order Value:</ion-col>
-              <ion-col>{{ card.amount }}</ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-card-content>
-      </ion-card>
-    </ion-content>
-  </ion-content>
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Offer</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let card of cards">
+    <img [src]="card.image" />
+    <ion-card-header>
+      <ion-card-title>{{ card.title }}</ion-card-title>
+      <ion-card-subtitle>{{ card.subtitle }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>Code:</ion-col>
+          <ion-col>{{ card.code }}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Min Order Value:</ion-col>
+          <ion-col>{{ card.amount }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

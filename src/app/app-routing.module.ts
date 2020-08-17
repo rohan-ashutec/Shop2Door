@@ -8,6 +8,7 @@ import { RateUsComponent } from './shared/rate-us/rate-us.component';
 import { OfferComponent } from './shared/offer/offer.component';
 import { ShopByCategoryComponent } from './main/shop-by-category/shop-by-category.component';
 import { ItemsComponent } from './main/shop-by-category/items/items.component';
+import { MyordersComponent } from './orders/myorders/myorders.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'offer', component: OfferComponent },
   { path: 'category', component: ShopByCategoryComponent },
   { path: 'items', component: ItemsComponent },
+  { path: 'myorders', component: MyordersComponent },
 ];
 
 @NgModule({
