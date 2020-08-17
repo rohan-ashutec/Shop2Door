@@ -32,3 +32,4 @@ npm-debug.log*
 /android
 /ios
 /.gradle
+/resources
