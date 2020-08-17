@@ -1,7 +1,8 @@
 {
   "name": "shop2door",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
