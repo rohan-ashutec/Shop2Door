@@ -1,5 +1,7 @@
 {
   "name": "shop2door",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

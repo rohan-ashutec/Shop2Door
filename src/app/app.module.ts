@@ -20,6 +20,10 @@ import { OfferComponent } from './shared/offer/offer.component';
 import { ShopByCategoryComponent } from './main/shop-by-category/shop-by-category.component';
 import { ItemsComponent } from './main/shop-by-category/items/items.component';
 import { MyordersComponent } from './orders/myorders/myorders.component';
+import { ItemsDetailsComponent } from './main/shop-by-category/items-details/items-details.component';
+import { MyaddressComponent } from './orders/myaddress/myaddress.component';
+import { MycardsComponent } from './orders/mycards/mycards.component';
+import { ShareComponent } from './shared/share/share.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +37,11 @@ import { MyordersComponent } from './orders/myorders/myorders.component';
     OfferComponent,
     ShopByCategoryComponent,
     ItemsComponent,
-    MyordersComponent
+    MyordersComponent,
+    ItemsDetailsComponent,
+    MyaddressComponent,
+    MycardsComponent,
+    ShareComponent
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule],
