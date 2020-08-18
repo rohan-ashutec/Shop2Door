@@ -25,6 +25,9 @@ import { MyaddressComponent } from './orders/myaddress/myaddress.component';
 import { MycardsComponent } from './orders/mycards/mycards.component';
 import { ShareComponent } from './shared/share/share.component';
 import { ModalsComponent } from './shared/modals/modals.component';
+import { RegisterorloginComponent } from './auth/registerorlogin/registerorlogin.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,10 +46,12 @@ import { ModalsComponent } from './shared/modals/modals.component';
     MyaddressComponent,
     MycardsComponent,
     ShareComponent,
-    ModalsComponent
+    ModalsComponent,
+    RegisterorloginComponent,
+    RegisterComponent
   ],
   entryComponents: [ModalsComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule,FormsModule,ReactiveFormsModule,],
   providers: [
     StatusBar,
     SplashScreen,

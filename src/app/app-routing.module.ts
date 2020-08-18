@@ -9,9 +9,11 @@ import { OfferComponent } from './shared/offer/offer.component';
 import { ShopByCategoryComponent } from './main/shop-by-category/shop-by-category.component';
 import { ItemsComponent } from './main/shop-by-category/items/items.component';
 import { MyordersComponent } from './orders/myorders/myorders.component';
+import { RegisterorloginComponent } from './auth/registerorlogin/registerorlogin.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/registerorlogin', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'aboutUs', component: AboutUsComponent },
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'category', component: ShopByCategoryComponent },
   { path: 'items', component: ItemsComponent },
   { path: 'myorders', component: MyordersComponent },
+  { path: 'registerorlogin', component: RegisterorloginComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
