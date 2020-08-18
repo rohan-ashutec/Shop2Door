@@ -24,6 +24,7 @@ import { ItemsDetailsComponent } from './main/shop-by-category/items-details/ite
 import { MyaddressComponent } from './orders/myaddress/myaddress.component';
 import { MycardsComponent } from './orders/mycards/mycards.component';
 import { ShareComponent } from './shared/share/share.component';
+import { ModalsComponent } from './shared/modals/modals.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,9 +42,10 @@ import { ShareComponent } from './shared/share/share.component';
     ItemsDetailsComponent,
     MyaddressComponent,
     MycardsComponent,
-    ShareComponent
+    ShareComponent,
+    ModalsComponent
   ],
-  entryComponents: [],
+  entryComponents: [ModalsComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule],
   providers: [
     StatusBar,

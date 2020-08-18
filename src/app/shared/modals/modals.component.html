@@ -9,9 +9,9 @@
 
 <ion-content>
   <ion-card *ngFor="let card of cards">
-    <ion-item>
-      <ion-label>{{ card.title }}</ion-label>
-      <p>{{ content }}</p>
-    </ion-item>
+    <ion-card-content>
+      <ion-card-title>{{ card.title }}</ion-card-title>
+      <ion-card-subtitle>{{ content }}</ion-card-subtitle>
+    </ion-card-content>
   </ion-card>
 </ion-content>
