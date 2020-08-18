@@ -7,7 +7,7 @@ const TOKEN_KEY = 'auth-token';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
+export class AuthService {
 
   authenticationState = new BehaviorSubject(false);
  
