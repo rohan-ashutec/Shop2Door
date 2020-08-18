@@ -19,10 +19,7 @@ const routes: Routes = [
     redirectTo: '/registerorlogin',
     pathMatch: 'full'
   },
-  {
-    path: 'registerorlogin',
-    component: RegisterorloginComponent
-  },
+
   {
     path: 'login',
     component: LoginComponent
@@ -70,6 +67,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'registerorlogin',
+    component: RegisterorloginComponent
   },
 ];
 
