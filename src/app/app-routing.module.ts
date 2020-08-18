@@ -14,7 +14,15 @@ import { RegisterComponent } from './auth/register/register.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/registerorlogin', pathMatch: 'full' },
+  {
+    path: '',
+    redirectTo: '/registerorlogin',
+    pathMatch: 'full'
+  },
+  {
+    path: 'registerorlogin',
+    component: RegisterorloginComponent
+  },
   {
     path: 'login',
     component: LoginComponent
@@ -58,10 +66,6 @@ const routes: Routes = [
     path: 'myorders',
     canLoad: [AuthGuard],
     component: MyordersComponent
-  },
-  {
-    path: 'registerorlogin',
-    component: RegisterorloginComponent
   },
   {
     path: 'register',

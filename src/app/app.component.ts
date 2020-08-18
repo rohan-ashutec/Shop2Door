@@ -30,9 +30,9 @@ export class AppComponent {
     });
     this.auth.authenticationState.subscribe(state => {
       if (state) {
-        this.router.navigate(['dashboard']);
+        this.router.navigateByUrl('/dashboard');
       } else {
-        this.router.navigate(['login']);
+        this.router.navigateByUrl('/login');
       }
     });
   }
