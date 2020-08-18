@@ -28,6 +28,10 @@ import { ModalsComponent } from './shared/modals/modals.component';
 import { RegisterorloginComponent } from './auth/registerorlogin/registerorlogin.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IonicStorageModule } from '@ionic/storage';
+import { environment } from 'src/environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +55,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegisterComponent
   ],
   entryComponents: [ModalsComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule,FormsModule,ReactiveFormsModule,],
+  imports: [BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    IonicStorageModule.forRoot(),
+  ],
   providers: [
     StatusBar,
     SplashScreen,

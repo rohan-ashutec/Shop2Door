@@ -11,20 +11,62 @@ import { ItemsComponent } from './main/shop-by-category/items/items.component';
 import { MyordersComponent } from './orders/myorders/myorders.component';
 import { RegisterorloginComponent } from './auth/registerorlogin/registerorlogin.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/registerorlogin', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'aboutUs', component: AboutUsComponent },
-  { path: 'needHelp', component: NeedHelpComponent },
-  { path: 'rateUs', component: RateUsComponent },
-  { path: 'offer', component: OfferComponent },
-  { path: 'category', component: ShopByCategoryComponent },
-  { path: 'items', component: ItemsComponent },
-  { path: 'myorders', component: MyordersComponent },
-  { path: 'registerorlogin', component: RegisterorloginComponent },
-  { path: 'register', component: RegisterComponent },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'dashboard',
+    canLoad: [AuthGuard],
+    component: DashboardComponent
+  },
+  {
+    path: 'aboutUs',
+    canLoad: [AuthGuard],
+    component: AboutUsComponent
+  },
+  {
+    path: 'needHelp',
+    canLoad: [AuthGuard],
+    component: NeedHelpComponent
+  },
+  {
+    path: 'rateUs',
+    canLoad: [AuthGuard],
+    component: RateUsComponent
+  },
+  {
+    path: 'offer',
+    canLoad: [AuthGuard],
+    component: OfferComponent
+  },
+  {
+    path: 'category',
+    canLoad: [AuthGuard],
+    component: ShopByCategoryComponent
+  },
+  {
+    path: 'items',
+    canLoad: [AuthGuard],
+    component: ItemsComponent
+  },
+  {
+    path: 'myorders',
+    canLoad: [AuthGuard],
+    component: MyordersComponent
+  },
+  {
+    path: 'registerorlogin',
+    component: RegisterorloginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
 ];
 
 @NgModule({

@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { Platform, AlertController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AuthServiceService } from './auth/auth-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,9 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private alertControl: AlertController
+    private alertControl: AlertController,
+    private auth: AuthServiceService,
+    private router: Router
   ) {
     this.initializeApp();
   }
@@ -24,12 +28,22 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+    this.auth.authenticationState.subscribe(state => {
+      if (state) {
+        this.router.navigate(['dashboard']);
+      } else {
+        this.router.navigate(['login']);
+      }
+    });
+  }
+  logout() {
+    this.auth.logout();
   }
   async presentAlert() {
     const alert = await this.alertControl.create({
       cssClass: 'my-custom-class',
       header: 'Rate Us',
-      message:'How was your experiance of shopping with us?',
+      message: 'How was your experiance of shopping with us?',
       inputs: [
         {
           name: 'name1',
