@@ -29,42 +29,42 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
     component: DashboardComponent
   },
   {
     path: 'aboutUs',
-    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
     component: AboutUsComponent
   },
   {
     path: 'needHelp',
-    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
     component: NeedHelpComponent
   },
   {
     path: 'rateUs',
-    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
     component: RateUsComponent
   },
   {
     path: 'offer',
-    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
     component: OfferComponent
   },
   {
     path: 'category',
-    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
     component: ShopByCategoryComponent
   },
   {
     path: 'items',
-    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
     component: ItemsComponent
   },
   {
     path: 'myorders',
-    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
     component: MyordersComponent
   },
   {
