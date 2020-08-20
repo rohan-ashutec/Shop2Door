@@ -6,10 +6,10 @@ For cordova to android
 
 Run  "ionic cordova prepare android"
 
-then "run ionic cordova run android"
+then run "ionic cordova run android"
 
 For cordova to ios
 
 Run  "ionic cordova prepare ios"
 
-then "run ionic cordova run ios"
+then run "ionic cordova run ios"
