@@ -12,16 +12,10 @@
             <div text-center>
               <h3>Create your account!</h3>
             </div>
+            <div text-center *ngIf="error.message">
+              <h3>{{ message }}</h3>
+            </div>
             <div padding>
-              <ion-item>
-                <ion-input
-                  name="name"
-                  type="text"
-                  placeholder="Name"
-                  formControlName="name"
-                  required
-                ></ion-input>
-              </ion-item>
               <ion-item>
                 <ion-input
                   name="email"

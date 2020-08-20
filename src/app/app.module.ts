@@ -31,8 +31,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicStorageModule } from '@ionic/storage';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +55,7 @@ import { AuthGuard } from './auth/auth.guard';
     ShareComponent,
     ModalsComponent,
     RegisterorloginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   entryComponents: [ModalsComponent],
   imports: [BrowserModule,
@@ -63,13 +65,16 @@ import { AuthGuard } from './auth/auth.guard';
     FormsModule,
     ReactiveFormsModule,
     IonicStorageModule.forRoot(),
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AuthService,
-    AuthGuard
+    AuthGuard,
   ],
   bootstrap: [AppComponent]
 })

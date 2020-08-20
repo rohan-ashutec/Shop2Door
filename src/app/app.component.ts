@@ -31,8 +31,6 @@ export class AppComponent {
     this.auth.authenticationState.subscribe(state => {
       if (state) {
         this.router.navigate(['/dashboard']);
-      } else {
-        this.router.navigate(['/registerorlogin']);
       }
     });
   }
