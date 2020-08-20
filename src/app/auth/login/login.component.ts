@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { FacebookService } from '../../shared/services/facebook.service';
+import { GoogleService } from '../../shared/services/google.service';
+import { TwitterService } from '../../shared/services/twitter.service';
+import { NewAuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +14,14 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   submitted: boolean;
-  constructor(private formBuilder: FormBuilder, private auth: AuthService,private router:Router) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private newAuthService: NewAuthService,
+    private router: Router,
+    public fb: FacebookService,
+    public google: GoogleService,
+    public twitter: TwitterService
+  ) {
     this.form = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
       password: ['', [Validators.required, Validators.minLength(8)]],
@@ -25,9 +35,10 @@ export class LoginComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    this.auth.signIn(this.form.controls.email.value, this.form.controls.password.value).subscribe(response => {
-      console.log(response)
-      this.router.navigateByUrl('/dashboard');
-    });
+    this.newAuthService.SignIn(this.form.controls.email.value, this.form.controls.password.value)
+    // this.auth.signIn(this.form.controls.email.value, this.form.controls.password.value).subscribe(response => {
+    //   console.log(response)
+    //   this.router.navigateByUrl('/dashboard');
+    // });
   }
 }

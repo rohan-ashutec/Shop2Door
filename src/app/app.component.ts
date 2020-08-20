@@ -3,8 +3,7 @@ import { Component } from '@angular/core';
 import { Platform, AlertController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { AuthService } from '../app/auth/auth.service';
-import { Router } from '@angular/router';
+import { NewAuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -17,8 +16,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private alertControl: AlertController,
-    private auth: AuthService,
-    private router: Router
+    public newAuthService:NewAuthService
   ) {
     this.initializeApp();
   }
@@ -28,14 +26,9 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-    this.auth.authenticationState.subscribe(state => {
-      if (state) {
-        this.router.navigate(['/dashboard']);
-      }
-    });
   }
   logout() {
-    this.auth.logout();
+    this.newAuthService.SignOut();
   }
   async presentAlert() {
     const alert = await this.alertControl.create({

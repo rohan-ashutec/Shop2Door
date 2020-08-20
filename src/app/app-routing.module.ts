@@ -11,7 +11,7 @@ import { ItemsComponent } from './main/shop-by-category/items/items.component';
 import { MyordersComponent } from './orders/myorders/myorders.component';
 import { RegisterorloginComponent } from './auth/registerorlogin/registerorlogin.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { AuthGuard } from './auth/auth.guard';
+import { NewAuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -26,42 +26,42 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    canActivate: [AuthGuard],
+    canLoad: [NewAuthGuard],
     component: DashboardComponent
   },
   {
     path: 'aboutUs',
-    canActivate: [AuthGuard],
+    canLoad: [NewAuthGuard],
     component: AboutUsComponent
   },
   {
     path: 'needHelp',
-    canActivate: [AuthGuard],
+    canLoad: [NewAuthGuard],
     component: NeedHelpComponent
   },
   {
     path: 'rateUs',
-    canActivate: [AuthGuard],
+    canLoad: [NewAuthGuard],
     component: RateUsComponent
   },
   {
     path: 'offer',
-    canActivate: [AuthGuard],
+    canLoad: [NewAuthGuard],
     component: OfferComponent
   },
   {
     path: 'category',
-    canActivate: [AuthGuard],
+    canLoad: [NewAuthGuard],
     component: ShopByCategoryComponent
   },
   {
     path: 'items',
-    canActivate: [AuthGuard],
+    canLoad: [NewAuthGuard],
     component: ItemsComponent
   },
   {
     path: 'myorders',
-    canActivate: [AuthGuard],
+    canLoad: [NewAuthGuard],
     component: MyordersComponent
   },
   {

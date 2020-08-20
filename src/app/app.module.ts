@@ -29,12 +29,16 @@ import { RegisterorloginComponent } from './auth/registerorlogin/registerorlogin
 import { RegisterComponent } from './auth/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicStorageModule } from '@ionic/storage';
-import { AuthService } from './auth/auth.service';
-import { AuthGuard } from './auth/auth.guard';
+import { NewAuthGuard } from './shared/guard/auth.guard';
+import { NewAuthService } from './shared/services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { FacebookService } from './shared/services/facebook.service';
+import { GoogleService } from './shared/services/google.service';
+import { TwitterService } from './shared/services/twitter.service';
+import { ProfileComponent } from './auth/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +60,7 @@ import { environment } from '../environments/environment';
     ModalsComponent,
     RegisterorloginComponent,
     RegisterComponent,
+    ProfileComponent
   ],
   entryComponents: [ModalsComponent],
   imports: [BrowserModule,
@@ -73,8 +78,11 @@ import { environment } from '../environments/environment';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AuthService,
-    AuthGuard,
+    FacebookService,
+    GoogleService,
+    TwitterService,
+    NewAuthService,
+    NewAuthGuard
   ],
   bootstrap: [AppComponent]
 })
