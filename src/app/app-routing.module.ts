@@ -12,6 +12,7 @@ import { MyordersComponent } from './orders/myorders/myorders.component';
 import { RegisterorloginComponent } from './auth/registerorlogin/registerorlogin.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { NewAuthGuard } from './shared/guard/auth.guard';
+import { ProfileComponent } from './auth/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,11 @@ const routes: Routes = [
   {
     path: 'registerorlogin',
     component: RegisterorloginComponent
+  },
+  {
+    path: 'profile',
+    canLoad: [NewAuthGuard],
+    component: ProfileComponent
   },
 ];
 
