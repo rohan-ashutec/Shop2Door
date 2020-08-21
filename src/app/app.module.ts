@@ -39,6 +39,7 @@ import { FacebookService } from './shared/services/facebook.service';
 import { GoogleService } from './shared/services/google.service';
 import { TwitterService } from './shared/services/twitter.service';
 import { ProfileComponent } from './auth/profile/profile.component';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,7 +83,8 @@ import { ProfileComponent } from './auth/profile/profile.component';
     GoogleService,
     TwitterService,
     NewAuthService,
-    NewAuthGuard
+    NewAuthGuard,
+    GooglePlus
   ],
   bootstrap: [AppComponent]
 })

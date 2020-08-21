@@ -1,13 +1,1 @@
-{
-  "appId": "com.shop2door.ionicangular",
-  "appName": "shop2door",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www",
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 0
-    }
-  },
-  "cordova": {}
-}
+{}
