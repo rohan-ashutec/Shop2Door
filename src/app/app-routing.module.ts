@@ -27,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    canLoad: [NewAuthGuard],
+    // canLoad: [NewAuthGuard],
     component: DashboardComponent
   },
   {

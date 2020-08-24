@@ -5,7 +5,10 @@ import { FacebookService } from '../../shared/services/facebook.service';
 import { GoogleService } from '../../shared/services/google.service';
 import { TwitterService } from '../../shared/services/twitter.service';
 import { NewAuthService } from '../../shared/services/auth.service';
-
+import { AngularFireAuth } from "@angular/fire/auth";
+import { Platform } from '@ionic/angular';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { MobgoogleService } from 'src/app/services/mobile/mobgoogle.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -25,10 +28,15 @@ export class RegisterComponent implements OnInit {
       userError: 'The e-mail address you have specified is an invalid format.',
     },
   ];
-  constructor(private formBuilder: FormBuilder, private newAuthService: NewAuthService, private router: Router,
+  constructor(private formBuilder: FormBuilder, private newAuthService: NewAuthService,
     public fb: FacebookService,
     public google: GoogleService,
-    public twitter: TwitterService) {
+    public twitter: TwitterService,
+    public platform: Platform,
+    public afAuth: AngularFireAuth,
+    public googleplus: GooglePlus,
+    public mobgoogleservice: MobgoogleService
+  ) {
     this.form = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
       password: ['', [Validators.required, Validators.minLength(8)]],
@@ -41,21 +49,5 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     console.log(this.form.controls.email.value, this.form.controls.password.value);
     this.newAuthService.SignUp(this.form.controls.email.value, this.form.controls.password.value);
-    // this.auth.signUp(this.form.controls.email.value, this.form.controls.password.value).subscribe(response => {
-    //   this.router.navigateByUrl('/dashboard');
-    //   console.log(response)
-    // }),
-    //   (error) => {
-    //     console.log(error)
-    //     this.error.message = error.error.error.message;
-
-    //     if (this.error.message === "EMAIL_EXISTS") {
-    //       this.message = "This email address already exists!";
-    //     }
-
-    //   },
-    //   () => {
-    //     console.log('The POST observable is now completed.');
-    //   }
   }
 }

@@ -63,7 +63,11 @@
   </ion-card>
   <ion-card>
     <ion-card-content>
-      <ion-button color="danger" class="center" (click)="google.GoogleAuth()">
+      <ion-button
+        color="danger"
+        class="center"
+        (click)="mobgoogleservice.submit()"
+      >
         <h2 text-capitalize>SignUp with Google</h2>
         <ion-icon name="logo-google" slot="end"></ion-icon>
       </ion-button>

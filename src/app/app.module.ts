@@ -40,6 +40,10 @@ import { GoogleService } from './shared/services/google.service';
 import { TwitterService } from './shared/services/twitter.service';
 import { ProfileComponent } from './auth/profile/profile.component';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { MobauthService } from './services/mobile/mobauth.service';
+import { MobgoogleService } from './services/mobile/mobgoogle.service';
+import { MobguardGuard } from './services/guards/mobguard.guard';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,6 +78,7 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [
     StatusBar,
@@ -84,7 +89,10 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
     TwitterService,
     NewAuthService,
     NewAuthGuard,
-    GooglePlus
+    GooglePlus,
+    MobauthService,
+    MobgoogleService,
+    MobguardGuard
   ],
   bootstrap: [AppComponent]
 })

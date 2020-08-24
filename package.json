@@ -75,7 +75,11 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.801464825576-i8uf2o09k025jl5rfbd9gueqmuac8vf1",
+        "WEB_APPLICATION_CLIENT_ID": "405000862294-q0ak3ntl4fdjhq9prop57936vf1kht7f.apps.googleusercontent.com"
+      }
     },
     "platforms": [
       "android",
