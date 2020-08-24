@@ -1,0 +1,43 @@
+// Angular Imports
+import { CommonModule } from '@angular/common';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthRoutingModule } from './auth-routing.module';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RegisterComponent } from './register/register.component';
+import { RegisterorloginComponent } from './registerorlogin/registerorlogin.component';
+import { RouteReuseStrategy } from '@angular/router';
+import { IonicRouteStrategy, IonicModule } from '@ionic/angular';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppComponent } from '../app.component';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AuthRoutingModule,
+    IonicModule.forRoot(),
+    RouterTestingModule,
+  ],
+  declarations: [
+    LoginComponent,
+    LogoutComponent,
+    ProfileComponent,
+    RegisterComponent,
+    RegisterorloginComponent
+  ],
+  entryComponents: [
+  ],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },],
+  exports: [
+    LoginComponent,
+    LogoutComponent,
+    ProfileComponent,
+    RegisterComponent,
+    RegisterorloginComponent
+  ],
+})
+export class AuthModule { }
