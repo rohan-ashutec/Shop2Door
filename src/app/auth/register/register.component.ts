@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { FacebookService } from '../../shared/services/facebook.service';
 import { GoogleService } from '../../shared/services/google.service';
 import { TwitterService } from '../../shared/services/twitter.service';
