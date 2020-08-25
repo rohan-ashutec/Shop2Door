@@ -42,4 +42,4 @@ import { ShareComponent } from './share/share.component';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class MainModule { }
+export class SharedModule { }

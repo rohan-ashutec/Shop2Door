@@ -29,11 +29,3 @@ export const routes: Routes = [
     loadChildren: './shared/shared.module#SharedModule',
   }
 ];
-
-@NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
