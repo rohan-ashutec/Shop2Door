@@ -32,4 +32,4 @@ import { MyordersComponent } from './myorders/myorders.component';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class MainModule { }
+export class OrdersModule { }
