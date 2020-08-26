@@ -13,7 +13,7 @@ export class NewAuthGuard implements CanLoad {
   }
   canLoad(route: Route, segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
     if (this.newauthService.isLoggedIn !== true) {
-      this.router.navigate(['login'])
+      this.router.navigate(['auth/login']);
     }
     return true;
   }

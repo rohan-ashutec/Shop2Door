@@ -35,7 +35,7 @@ export class MobgoogleService {
     const credential = accessSecret ? firebase.auth.GoogleAuthProvider.credential(accessToken, accessSecret) : firebase.auth.GoogleAuthProvider.credential(accessToken);
     this.fireAuth.signInWithCredential(credential)
       .then((response) => {
-        this.router.navigate(["/dashboard"]);
+        this.router.navigate(["/main/dashboard"]);
       })
 
 

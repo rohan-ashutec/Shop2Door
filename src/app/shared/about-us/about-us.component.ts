@@ -8,11 +8,8 @@ import { MenuController } from '@ionic/angular';
 })
 export class AboutUsComponent implements OnInit {
 
-    private menuController: MenuController
-    constructor() { }
+  constructor() { }
 
-  ngOnInit() {}
-  openMenu() {
-    this.menuController.open();
-  }
+  ngOnInit() { }
+
 }

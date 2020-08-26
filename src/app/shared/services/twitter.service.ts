@@ -16,7 +16,7 @@ export class TwitterService {
     return this.afAuth.signInWithPopup(provider)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigateByUrl('/dashboard');
+          this.router.navigateByUrl('/main/dashboard');
         });
         console.log('You have been successfully logged in!', result)
         this.newAuthService.SetUserData(result.user);

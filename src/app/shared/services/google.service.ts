@@ -17,7 +17,7 @@ export class GoogleService {
     return this.afAuth.signInWithPopup(provider)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigateByUrl('/dashboard');
+          this.router.navigateByUrl('/main/dashboard');
         })
         this.newAuthService.SetUserData(result.user);
         console.log('You have been successfully logged in!', result)

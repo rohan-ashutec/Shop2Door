@@ -1,10 +1,10 @@
 <ion-app>
-  <ion-menu side="start"  *ngIf="newAuthService.userData">
+  <ion-menu side="start" *ngIf="newAuthService.userData">
     <ion-header>
       <ion-toolbar
         translucent
         *ngIf="newAuthService.userData as user"
-        routerLink="/profile"
+        routerLink="/auth/profile"
       >
         <ion-grid>
           <ion-row>
@@ -17,9 +17,7 @@
               <h3>{{ user.displayName }}</h3>
             </ion-col>
             <ion-col size="1">
-              <ion-icon
-                name="chevron-forward-outline" class="icon"
-              ></ion-icon>
+              <ion-icon name="chevron-forward-outline" class="icon"></ion-icon>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -48,7 +46,7 @@
           <ion-item lines="none" color="danger" margin>
             <ion-grid>
               <ion-row>
-                <ion-col size="4" routerLink="/myorders">
+                <ion-col size="4" routerLink="/orders/myorders">
                   <ion-icon name="train-outline"></ion-icon>
                   <ion-label>My Order</ion-label>
                 </ion-col>
@@ -67,19 +65,19 @@
       </ion-list>
       <ion-list>
         <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/dashboard">
+          <ion-item lines="none" routerLink="/main/dashboard">
             <ion-icon name="home-outline" slot="start"></ion-icon>
             <ion-label>Home</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/category">
+          <ion-item lines="none" routerLink="/main/category">
             <ion-icon name="cash-outline" slot="start"></ion-icon>
             <ion-label>Shop by Category</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/offer">
+          <ion-item lines="none" routerLink="/shared/offer">
             <ion-icon name="card-outline" slot="start"></ion-icon>
             <ion-label>Offer Zone</ion-label>
           </ion-item>
@@ -95,19 +93,19 @@
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/needHelp">
+          <ion-item lines="none" routerLink="/shared/needHelp">
             <ion-icon name="share-social-outline" slot="start"></ion-icon>
             <ion-label>Share</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/needHelp">
+          <ion-item lines="none" routerLink="/shared/needHelp">
             <ion-icon name="help-circle-outline" slot="start"></ion-icon>
             <ion-label>Need Help</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/aboutUs">
+          <ion-item lines="none" routerLink="/shared/aboutUs">
             <ion-icon name="information-circle-outline" slot="start"></ion-icon>
             <ion-label>About Us</ion-label>
           </ion-item>

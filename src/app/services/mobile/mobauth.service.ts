@@ -26,14 +26,14 @@ export class MobauthService {
         }
       }
       else {
-        this.router.navigate(["/dashboard"]);
+        this.router.navigate(["/main/dashboard"]);
       }
     });
   }
 
   logout() {
     this.fireAuth.signOut().then(() => {
-      this.router.navigate(["/login"]);
+      this.router.navigate(["/auth/login"]);
     })
   }
 }

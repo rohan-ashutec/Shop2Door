@@ -8,12 +8,8 @@ import { MenuController } from '@ionic/angular';
 export class SidemenuComponent implements OnInit {
 
   constructor(
-    private menuController: MenuController
   ) { }
 
   ngOnInit() {
-  }
-  openMenu() {
-    this.menuController.open();
   }
 }

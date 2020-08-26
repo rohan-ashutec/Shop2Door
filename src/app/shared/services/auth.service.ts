@@ -37,7 +37,7 @@ export class NewAuthService {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['/main/dashboard']);
         });
         this.SetUserData(result.user);
       }).catch((error) => {
@@ -52,7 +52,7 @@ export class NewAuthService {
         /* Call the SendVerificaitonMail() function when new user sign 
         up and returns promise */
         // this.SendVerificationMail();
-        this.router.navigateByUrl('/dashboard');
+        this.router.navigateByUrl('/main/dashboard');
         this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error.message)
@@ -80,6 +80,7 @@ export class NewAuthService {
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
+    console.log(user)
     return (user !== null) ? true : false;
   }
 
