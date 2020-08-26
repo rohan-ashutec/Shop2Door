@@ -28,5 +28,3 @@ export const routes: Routes = [
     loadChildren: './shared/shared.module#SharedModule',
   }
 ];
-
-export class AppRoutingModule { }

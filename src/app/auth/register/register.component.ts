@@ -8,6 +8,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { Platform } from '@ionic/angular';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { MobgoogleService } from 'src/app/services/mobile/mobgoogle.service';
+import { MobfacebookService } from 'src/app/services/mobile/mobfacebook.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -34,7 +35,8 @@ export class RegisterComponent implements OnInit {
     public platform: Platform,
     public afAuth: AngularFireAuth,
     public googleplus: GooglePlus,
-    public mobgoogleservice: MobgoogleService
+    public mobgoogleservice: MobgoogleService,
+    public mobfb: MobfacebookService
   ) {
     this.form = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
