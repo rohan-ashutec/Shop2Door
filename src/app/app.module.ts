@@ -27,6 +27,7 @@ import { MobguardGuard } from './services/guards/mobguard.guard';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { Facebook } from '@ionic-native/facebook/ngx';
 import { MobfacebookService } from './services/mobile/mobfacebook.service';
+import { DataService } from './shared/services/data.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,8 @@ import { MobfacebookService } from './services/mobile/mobfacebook.service';
     MobgoogleService,
     MobguardGuard,
     Facebook,
-    MobfacebookService
+    MobfacebookService,
+    DataService
   ],
   bootstrap: [AppComponent]
 })

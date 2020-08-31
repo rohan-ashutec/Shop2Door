@@ -12,6 +12,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicRouteStrategy, IonicModule } from '@ionic/angular';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from '../app.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { AppComponent } from '../app.component';
     LogoutComponent,
     ProfileComponent,
     RegisterComponent,
-    RegisterorloginComponent
+    RegisterorloginComponent,
+    UpdateComponent
   ],
   entryComponents: [
   ],
@@ -37,7 +39,8 @@ import { AppComponent } from '../app.component';
     LogoutComponent,
     ProfileComponent,
     RegisterComponent,
-    RegisterorloginComponent
+    RegisterorloginComponent,
+    UpdateComponent
   ],
 })
 export class AuthModule { }

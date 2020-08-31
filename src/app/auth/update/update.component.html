@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Delivery Location</ion-title>
+    <ion-icon name="cart-outline" slot="end" class="icon"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="editForm" (ngSubmit)="updateForm()" novalidate>
+    <ion-card>
+      <ion-card-content>
+        <ion-card-subtitle>Name</ion-card-subtitle>
+        <ion-input type="text" formControlName="fullName"></ion-input>
+      </ion-card-content>
+      <ion-card-content>
+        <ion-card-subtitle>Email</ion-card-subtitle>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-card-content>
+      <ion-card-content>
+        <ion-card-subtitle>PhoneNumber</ion-card-subtitle>
+        <ion-input type="number" formControlName="phoneNumber"></ion-input>
+      </ion-card-content>
+      <ion-card-content>
+        <ion-card-subtitle>State</ion-card-subtitle>
+        <ion-input type="text" formControlName="state"></ion-input>
+      </ion-card-content>
+      <ion-card-content>
+        <ion-card-subtitle>Country</ion-card-subtitle>
+        <ion-input type="text" formControlName="country"></ion-input>
+      </ion-card-content>
+      <ion-button type="submit" [disabled]="!editForm.valid"
+        >Add Data</ion-button
+      >
+    </ion-card>
+  </form>
+</ion-content>

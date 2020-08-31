@@ -29,7 +29,7 @@
     "@ionic/storage": "^2.3.0",
     "cordova-android": "9.0.0",
     "cordova-ios": "6.1.0",
-    "firebase": "^7.18.0",
+    "firebase": "^7.19.1",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

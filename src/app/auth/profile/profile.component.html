@@ -21,7 +21,11 @@
           <p>{{ user.phoneNumber }}</p>
         </ion-col>
         <ion-col size="3">
-          <h5>Edit Profile</h5>
+          <h5>
+            <ion-buttons>
+              <ion-button routerLink="/auth/update">Edit Profile</ion-button>
+            </ion-buttons>
+          </h5>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -38,6 +42,14 @@
     <ion-card-content>
       <ion-card-subtitle>PhoneNumber</ion-card-subtitle>
       <ion-card-title>{{ user.phoneNumber }}</ion-card-title>
+    </ion-card-content>
+    <ion-card-content>
+      <ion-card-subtitle>State</ion-card-subtitle>
+      <ion-card-title>{{ user.state }}</ion-card-title>
+    </ion-card-content>
+    <ion-card-content>
+      <ion-card-subtitle>Country</ion-card-subtitle>
+      <ion-card-title>{{ user.country }}</ion-card-title>
     </ion-card-content>
   </ion-card>
 </ion-content>

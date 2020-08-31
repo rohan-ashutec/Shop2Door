@@ -12,6 +12,7 @@ import { AboutUsComponent } from './shared/about-us/about-us.component';
 import { NeedHelpComponent } from './shared/need-help/need-help.component';
 import { RateUsComponent } from './shared/rate-us/rate-us.component';
 import { OfferComponent } from './shared/offer/offer.component';
+import { UpdateComponent } from './auth/update/update.component';
 
 export const routes: Routes = [
   {
@@ -47,6 +48,11 @@ export const routes: Routes = [
         path: 'profile',
         canLoad: [NewAuthGuard],
         component: ProfileComponent
+      },
+      {
+        path: 'update',
+        canLoad: [NewAuthGuard],
+        component: UpdateComponent
       },
     ]
   },
