@@ -14,7 +14,7 @@ export class UpdateComponent implements OnInit {
     private fb: FormBuilder,
     private actRoute: ActivatedRoute,
     private router: Router,
-    private crudApi: DataService
+    public crudApi: DataService
   ) {
   this.editForm = this.fb.group({
     fullName: ['', [Validators.required]],

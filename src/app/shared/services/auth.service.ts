@@ -4,6 +4,8 @@ import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
+import { Storage } from '@ionic/storage';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +13,22 @@ import { Router } from "@angular/router";
 
 export class NewAuthService {
   userData: any; // Save logged in user data
-
+  obj = ({
+    id: String(),
+    uid: String(),
+    fullName: String(),
+    email: String(),
+    phoneNumber: String(),
+    state: String(),
+    country: String()
+  });
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
-    public ngZone: NgZone // NgZone service to remove outside scope warning
+    public ngZone: NgZone,
+    public storage: Storage,
+    public dataService: DataService,
   ) {
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
@@ -52,6 +64,12 @@ export class NewAuthService {
         /* Call the SendVerificaitonMail() function when new user sign 
         up and returns promise */
         // this.SendVerificationMail();
+        this.obj.uid = result.user.uid;
+        localStorage.setItem('uid', this.obj.uid);
+        this.obj.fullName = result.user.displayName;
+        this.obj.email = result.user.email;
+        this.obj.phoneNumber = result.user.phoneNumber;
+        this.dataService.AddData(this.obj);
         this.router.navigateByUrl('/main/dashboard');
         this.SetUserData(result.user);
       }).catch((error) => {
@@ -106,6 +124,9 @@ export class NewAuthService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
+      // this.storage.remove('uid');
+      localStorage.removeItem('uid');
+
       this.router.navigate(['auth/register']);
     })
   }

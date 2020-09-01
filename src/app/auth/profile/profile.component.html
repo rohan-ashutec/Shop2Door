@@ -9,16 +9,16 @@
 </ion-header>
 <ion-content>
   <div class="main-card">
-    <ion-grid *ngIf="newAuthService.userData as user">
+    <ion-grid >
       <ion-row>
         <ion-col size="3">
-          <ion-avatar>
+          <ion-avatar *ngIf="newAuthService.userData as user">
             <ion-img [src]="user.photoURL"></ion-img>
           </ion-avatar>
         </ion-col>
         <ion-col size="6">
-          <h1>{{ user.displayName ? user.displayName : "User" }}</h1>
-          <p>{{ user.phoneNumber }}</p>
+          <h1>{{ obj.fullName }}</h1>
+          <p>{{ obj.phoneNumber }}</p>
         </ion-col>
         <ion-col size="3">
           <h5>
@@ -30,26 +30,26 @@
       </ion-row>
     </ion-grid>
   </div>
-  <ion-card *ngIf="newAuthService.userData as user">
+  <ion-card >
     <ion-card-content>
       <ion-card-subtitle>Name</ion-card-subtitle>
-      <ion-card-title>{{ user.displayName }}</ion-card-title>
+      <ion-card-title>{{ obj.fullName }}</ion-card-title>
     </ion-card-content>
     <ion-card-content>
       <ion-card-subtitle>Email</ion-card-subtitle>
-      <ion-card-title>{{ user.email }}</ion-card-title>
+      <ion-card-title>{{ obj.email }}</ion-card-title>
     </ion-card-content>
     <ion-card-content>
       <ion-card-subtitle>PhoneNumber</ion-card-subtitle>
-      <ion-card-title>{{ user.phoneNumber }}</ion-card-title>
+      <ion-card-title>{{ obj.phoneNumber }}</ion-card-title>
     </ion-card-content>
     <ion-card-content>
       <ion-card-subtitle>State</ion-card-subtitle>
-      <ion-card-title>{{ user.state }}</ion-card-title>
+      <ion-card-title>{{ obj.state }}</ion-card-title>
     </ion-card-content>
     <ion-card-content>
       <ion-card-subtitle>Country</ion-card-subtitle>
-      <ion-card-title>{{ user.country }}</ion-card-title>
+      <ion-card-title>{{ obj.country }}</ion-card-title>
     </ion-card-content>
   </ion-card>
 </ion-content>
