@@ -4,6 +4,8 @@ import { Platform, AlertController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { NewAuthService } from './shared/services/auth.service';
+import { Data } from './shared/services/data.model';
+import { DataService } from './shared/services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +13,26 @@ import { NewAuthService } from './shared/services/auth.service';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  Data: Data[];
+  uid = localStorage.getItem('uid');;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private alertControl: AlertController,
-    public newAuthService:NewAuthService
+    public newAuthService: NewAuthService,
+    public dataService: DataService
   ) {
     this.initializeApp();
+    let s = this.dataService.GetDatasList();
+    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+      this.Data = [];
+      data.forEach(item => {
+        let a = item.payload.toJSON();
+        a['$key'] = item.key;
+        this.Data.push(a as Data);
+      })
+    })
   }
 
   initializeApp() {

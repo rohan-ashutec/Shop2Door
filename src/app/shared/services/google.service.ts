@@ -37,15 +37,33 @@ export class GoogleService {
         this.ngZone.run(() => {
           this.router.navigateByUrl('/main/dashboard');
         })
-        this.obj.uid = result.user.uid;
         // this.storag.set('uid', this.obj.uid);
+        this.obj.uid = result.user.uid;
         localStorage.setItem('uid', this.obj.uid);
-        this.obj.fullName = result.user.displayName;
-        this.obj.email = result.user.email;
-        this.obj.phoneNumber = result.user.phoneNumber;
+        this.obj.fullName = result.user.displayName || "";
+        this.obj.email = result.user.email || "";
+        this.obj.phoneNumber = result.user.phoneNumber || "";
+        this.obj.state = "";
+        this.obj.country = "";
         this.dataService.AddData(this.obj);
+        console.log('You have been successfully logged in!', result);
         this.newAuthService.SetUserData(result.user);
-        console.log('You have been successfully logged in!', result)
+      }).catch((error) => {
+        window.alert(error)
+      })
+  }
+  NoGoogleAuth() {
+    return this.NoAuthLogin(new auth.GoogleAuthProvider());
+  }
+  NoAuthLogin(provider) {
+    return this.afAuth.signInWithPopup(provider)
+      .then((result) => {
+        this.ngZone.run(() => {
+          this.router.navigateByUrl('/main/dashboard');
+        })
+        localStorage.setItem('uid', this.obj.uid);
+        console.log('You have been successfully logged in!', result);
+        this.newAuthService.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error)
       })

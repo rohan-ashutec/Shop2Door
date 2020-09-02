@@ -48,7 +48,6 @@ export class RegisterComponent implements OnInit {
 
   }
   onSubmit() {
-    console.log(this.form.controls.email.value, this.form.controls.password.value);
     this.newAuthService.SignUp(this.form.controls.email.value, this.form.controls.password.value);
   }
 }

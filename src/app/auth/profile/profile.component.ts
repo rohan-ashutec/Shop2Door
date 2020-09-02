@@ -1,51 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { NewAuthService } from '../../shared/services/auth.service';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
-
+import { DataService } from '../../shared/services/data.service';
+import { Data } from '../../shared/services/data.model';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  datasRef: AngularFireList<any>;
-  obj: any = {
-    id: String,
-    uid: String,
-    fullName: "",
-    email: "",
-    phoneNumber: "",
-    state: "",
-    country: ""
-  };
+  Data: Data[];
+  uid = localStorage.getItem('uid'); key: string;
   constructor(
     public newAuthService: NewAuthService,
-    private db: AngularFireDatabase
+    public dataService: DataService
   ) {
-    this.datasRef = this.db.list('datas-list');
-    this.obj;
   }
   ionViewWillEnter() {
-    var query = this.db.database.ref("datas-list").orderByKey();
-    query.once("value")
-      .then(function (snapshot) {
-        snapshot.forEach(function (childSnapshot) {
-          
-          const uid = localStorage.getItem('uid');
-          var key = childSnapshot.key;
-          var childData = childSnapshot.val();
-          console.log(uid, key, childData)
-          if (childData.uid = uid) {
-            console.log(childData.fullName)
-            this.obj.fullname = childData.fullName;
-            this.obj.country = childData.country;
-            this.obj.state = childData.state;
-            this.obj.email = childData.email;
-            this.obj.phoneNumber = childData.phoneNumber;
-          }
-        });
-      });
-
+    let s = this.dataService.GetDatasList();
+    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+      this.Data = [];
+      data.forEach(item => {
+        let a = item.payload.toJSON();
+        a['$key'] = item.key;
+        this.key = item.key;
+        this.Data.push(a as Data);
+      })
+    })
   }
   ngOnInit() { }
 

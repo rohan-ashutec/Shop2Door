@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { FacebookService } from '../../shared/services/facebook.service';
-import { GoogleService } from '../../shared/services/google.service';
-import { TwitterService } from '../../shared/services/twitter.service';
 import { NewAuthService } from '../../shared/services/auth.service';
+import { GoogleService } from '../../shared/services/google.service';
+import { FacebookService } from '../../shared/services/facebook.service';
+import { TwitterService } from '../../shared/services/twitter.service';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +16,10 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private newAuthService: NewAuthService,
+    public google:GoogleService,
+    public fb:FacebookService,
+    public twitter:TwitterService,
+
   ) {
     this.form = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
@@ -32,9 +35,5 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.newAuthService.SignIn(this.form.controls.email.value, this.form.controls.password.value)
-    // this.auth.signIn(this.form.controls.email.value, this.form.controls.password.value).subscribe(response => {
-    //   console.log(response)
-    //   this.router.navigateByUrl('/dashboard');
-    // });
   }
 }

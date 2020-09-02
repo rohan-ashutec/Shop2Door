@@ -1,6 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from "../services/user";
-import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
@@ -51,6 +50,8 @@ export class NewAuthService {
         this.ngZone.run(() => {
           this.router.navigate(['/main/dashboard']);
         });
+        this.obj.uid = result.user.uid;
+        localStorage.setItem('uid', this.obj.uid);
         this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error.message)
@@ -66,9 +67,11 @@ export class NewAuthService {
         // this.SendVerificationMail();
         this.obj.uid = result.user.uid;
         localStorage.setItem('uid', this.obj.uid);
-        this.obj.fullName = result.user.displayName;
-        this.obj.email = result.user.email;
-        this.obj.phoneNumber = result.user.phoneNumber;
+        this.obj.fullName = result.user.displayName || "";
+        this.obj.email = result.user.email || "";
+        this.obj.phoneNumber = result.user.phoneNumber || "";
+        this.obj.state = "";
+        this.obj.country = "";
         this.dataService.AddData(this.obj);
         this.router.navigateByUrl('/main/dashboard');
         this.SetUserData(result.user);
@@ -127,7 +130,7 @@ export class NewAuthService {
       // this.storage.remove('uid');
       localStorage.removeItem('uid');
 
-      this.router.navigate(['auth/register']);
+      this.router.navigate(['auth/login']);
     })
   }
 

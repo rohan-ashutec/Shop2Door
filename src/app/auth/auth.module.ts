@@ -11,7 +11,6 @@ import { RegisterorloginComponent } from './registerorlogin/registerorlogin.comp
 import { RouteReuseStrategy } from '@angular/router';
 import { IonicRouteStrategy, IonicModule } from '@ionic/angular';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from '../app.component';
 import { UpdateComponent } from './update/update.component';
 
 @NgModule({
@@ -42,5 +41,6 @@ import { UpdateComponent } from './update/update.component';
     RegisterorloginComponent,
     UpdateComponent
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AuthModule { }

@@ -10,11 +10,15 @@
           <ion-row>
             <ion-col size="4">
               <ion-avatar>
-                <ion-img [src]="user.photoURL"></ion-img>
+                <ion-img [src]="user.photoURL" alt="no img"></ion-img>
               </ion-avatar>
             </ion-col>
             <ion-col size="7">
-              <h3>{{ user.displayName }}</h3>
+              <div *ngFor="let data of Data">
+                <div *ngIf="data.uid === this.uid">
+                  <h3>{{ data.fullName }}</h3>
+                </div>
+              </div>
             </ion-col>
             <ion-col size="1">
               <ion-icon name="chevron-forward-outline" class="icon"></ion-icon>
@@ -33,8 +37,12 @@
                   <ion-icon name="location"></ion-icon>
                 </ion-col>
                 <ion-col size="9">
-                  <ion-label>Your Location:</ion-label>
-                  <ion-label>Jaipur</ion-label>
+                  <div *ngFor="let data of Data">
+                    <div *ngIf="data.uid === this.uid">
+                      <ion-label>Your Location:</ion-label>
+                      <ion-label>{{ data.state }}</ion-label>
+                    </div>
+                  </div>
                 </ion-col>
               </ion-row>
             </ion-grid>

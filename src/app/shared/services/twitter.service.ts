@@ -35,13 +35,31 @@ export class TwitterService {
         this.ngZone.run(() => {
           this.router.navigateByUrl('/main/dashboard');
         });
-        this.obj.uid = result.user.uid;
         // this.storag.set('uid', this.obj.uid);
-        localStorage.setItem('uid',  JSON.stringify(this.obj.uid));
-        this.obj.fullName = result.user.displayName;
-        this.obj.email = result.user.email;
-        this.obj.phoneNumber = result.user.phoneNumber;
+        this.obj.uid = result.user.uid;
+        localStorage.setItem('uid', this.obj.uid);
+        this.obj.fullName = result.user.displayName || "";
+        this.obj.email = result.user.email || "";
+        this.obj.phoneNumber = result.user.phoneNumber || "";
+        this.obj.state = "";
+        this.obj.country = "";
         this.dataService.AddData(this.obj);
+        console.log('You have been successfully logged in!', result)
+        this.newAuthService.SetUserData(result.user);
+      }).catch((error) => {
+        console.log(error)
+      })
+  }
+  NoTwitterAuth() {
+    return this.NoAuthLogin(new auth.TwitterAuthProvider());
+  }
+  NoAuthLogin(provider) {
+    return this.afAuth.signInWithPopup(provider)
+      .then((result) => {
+        this.ngZone.run(() => {
+          this.router.navigateByUrl('/main/dashboard');
+        });
+        localStorage.setItem('uid', result.user.uid);
         console.log('You have been successfully logged in!', result)
         this.newAuthService.SetUserData(result.user);
       }).catch((error) => {

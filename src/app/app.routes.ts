@@ -50,7 +50,7 @@ export const routes: Routes = [
         component: ProfileComponent
       },
       {
-        path: 'update',
+        path: 'update/:id',
         canLoad: [NewAuthGuard],
         component: UpdateComponent
       },

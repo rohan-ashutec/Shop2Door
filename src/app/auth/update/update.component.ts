@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataService } from 'src/app/shared/services/data.service';
+import { DataService } from '../../shared/services/data.service';
 
 @Component({
   selector: 'app-update',
@@ -10,19 +10,21 @@ import { DataService } from 'src/app/shared/services/data.service';
 })
 export class UpdateComponent implements OnInit {
   editForm: FormGroup;
+  uid: string = localStorage.getItem('uid');
   constructor(
     private fb: FormBuilder,
     private actRoute: ActivatedRoute,
     private router: Router,
     public crudApi: DataService
   ) {
-  this.editForm = this.fb.group({
-    fullName: ['', [Validators.required]],
-    email: ['', [Validators.required]],
-    phoneNumber: ['', [Validators.required]],
-    state: ['', [Validators.required]],
-    country: ['', [Validators.required]]
-  });
+    this.editForm = this.fb.group({
+      uid: [this.uid],
+      fullName: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required]],
+      state: ['', [Validators.required]],
+      country: ['', [Validators.required]]
+    });
   }
 
   ngOnInit() {
@@ -32,11 +34,28 @@ export class UpdateComponent implements OnInit {
     })
 
   }
+  get fullName() {
+    return this.editForm.get('fullName');
+  }
+
+  get email() {
+    return this.editForm.get('email');
+  }
+
+  get phoneNumber() {
+    return this.editForm.get('phoneNumber');
+  }
+
+  get state() {
+    return this.editForm.get('state');
+  }
+  get country() {
+    return this.editForm.get('country');
+  }
 
   // Below methods fire when somebody click on submit button
   updateForm() {
-    console.log(this.editForm.value)
-    this.crudApi.AddData(this.editForm.value);       // Update student data using CRUD API
+    this.crudApi.UpdateData(this.editForm.value);       // Update student data using CRUD API
     this.router.navigate(['auth/profile']);               // Navigate to student's list page when student data is updated
   }
 }

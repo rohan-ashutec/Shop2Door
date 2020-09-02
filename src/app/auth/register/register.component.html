@@ -47,21 +47,22 @@
   </form>
   <ion-card>
     <ion-card-content>
+      <ion-button color="danger" class="center" routerLink="/auth/login">
+        <h2 text-capitalize>Or Login</h2>
+      </ion-button>
+    </ion-card-content>
+    <ion-card-content>
       <ion-button color="danger" class="center" (click)="fb.FacebookAuth()">
         <h2 text-capitalize>SignUp with Facebook</h2>
         <ion-icon name="logo-facebook" slot="end"></ion-icon>
       </ion-button>
     </ion-card-content>
-  </ion-card>
-  <ion-card>
     <ion-card-content>
       <ion-button color="danger" class="center" (click)="twitter.TwitterAuth()">
         <h2 text-capitalize>SignUp with Twitter</h2>
         <ion-icon name="logo-twitter" slot="end"></ion-icon>
       </ion-button>
     </ion-card-content>
-  </ion-card>
-  <ion-card>
     <ion-card-content>
       <ion-button color="danger" class="center" (click)="google.GoogleAuth()">
         <h2 text-capitalize>SignUp with Google</h2>

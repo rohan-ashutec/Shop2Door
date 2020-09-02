@@ -12,22 +12,8 @@ export class DataService {
   constructor(private db: AngularFireDatabase,
     public storage: Storage) {
     this.datasRef = this.db.list('datas-list')
+    this.dataRef = this.db.object('datas-list')
     // this.uid = this.storage.get('uid');
-    console.log(this.uid);
-    // var query = this.db.database.ref("datas-list").orderByKey();
-    // query.once("value")
-    //   .then(function (snapshot) {
-    //     snapshot.forEach(function (childSnapshot) {
-    //       const uid = localStorage.getItem('uid');
-    //       var key = childSnapshot.key;
-    //       var childData = childSnapshot.val();
-    //       console.log(uid, key, childData)
-    //       if(childData.uid = uid){
-    //         console.log("hello")
-    //         console.log(childData.fullName)
-    //       }
-    //     });
-    //   });
   }
   AddData(data: Data) {
     this.datasRef.push({
@@ -39,7 +25,7 @@ export class DataService {
       country: data.country
     })
   }
-  GetData(id:string) {
+  GetData(id: string) {
     this.dataRef = this.db.object('datas-list/' + id);
     return this.dataRef;
   }
@@ -53,6 +39,7 @@ export class DataService {
   // Update Student Object
   UpdateData(data: Data) {
     this.dataRef.update({
+      uid: data.uid,
       fullName: data.fullName,
       email: data.email,
       phoneNumber: data.phoneNumber,
